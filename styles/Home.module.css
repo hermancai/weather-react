@@ -1,9 +1,10 @@
 .pageContainer {
-  padding: 5rem;
+  padding: 3% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .inputContainer {
@@ -11,18 +12,21 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
-  gap: 0.5rem;
-  height: 3rem;
+  gap: 1rem;
 }
 
 .searchInputField {
-  height: 100%;
+  height: 3rem;
   text-align: center;
   border: solid 3px #223561;
   border-radius: 300px;
   font-size: x-large;
   outline: none;
+  padding: 0 2rem;
+}
+
+.searchInputField::placeholder {
+  color: #162340;
 }
 
 .searchInputField:focus {
@@ -47,4 +51,30 @@
 .buttonIcon {
   height: 1.5rem;
   color: #fff;
+}
+
+.spinnerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  border: solid 8px #ddd;
+  border-top: solid 8px #223561;
+  border-radius: 300px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

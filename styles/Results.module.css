@@ -21,8 +21,13 @@
   font-size: xx-large;
 }
 
-.currentLeft p:nth-child(3) {
+.lightFont {
   font-weight: lighter;
+}
+
+.grayFont {
+  color: #888;
+  padding: 3px 10px;
 }
 
 .currentRight {
@@ -31,6 +36,38 @@
   white-space: pre-line;
 }
 
-.currentRight p:nth-child(2) {
+.currentRight p:nth-child(2), .dailyTempRow p:nth-child(1) {
   margin-bottom: 1rem;
+}
+
+.dailyContainer {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 3fr 2fr 1fr 1fr;
+  max-width: 100vw;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+.dailyContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: solid 1px black;
+  border-right: solid 1px black;
+}
+
+.gridTop {
+  border-top: solid 1px black;
+}
+
+.dailyGridHeader {
+  border-left: solid 1px black;
+}
+
+.dailyContainer div:nth-child(9n + 2) {
+  background-color: #dce5fc;
 }

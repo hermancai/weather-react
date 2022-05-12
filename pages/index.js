@@ -1,17 +1,27 @@
 import Head from "next/head";
 import { useState } from "react";
 import SearchInput from "../components/SearchInput";
-import ResultTable from "../components/ResultTable";
+import ResultContainer from "../components/ResultContainer";
+import Spinner from "../components/Spinner";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const [showTable, setShowTable] = useState(false);
-  const [showError, setShowError] = useState(false);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = (input) => {
+  const handleSearch = async (input) => {
     if (input.trim() === "") return;
-    setShowTable(!showTable);
-    console.log(input);
+
+    setData(null);
+    setLoading(true);
+
+    const result = await fetch(`/api/getWeather/${input}`);
+    const resultJSON = await result.json();
+
+    // TODO: error check
+
+    setData(resultJSON);
+    setLoading(false);
   };
 
   return (
@@ -23,7 +33,8 @@ export default function Home() {
       </Head>
 
       <SearchInput handleSearch={handleSearch} />
-      {showTable ? <ResultTable /> : null}
+      {loading && <Spinner />}
+      {data ? <ResultContainer data={data} /> : null}
     </div>
   );
 }
