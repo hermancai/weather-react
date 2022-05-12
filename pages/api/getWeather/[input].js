@@ -5,7 +5,7 @@ export default async function getWeather({ query: { input } }, res) {
   const coordsJSON = await coordsResponse.json();
 
   if (coordsJSON.length === 0)
-    res.status(400).json({ error: "No results found." });
+    return res.status(400).json({ error: "No results found." });
 
   const { lat, lon } = coordsJSON[0];
   const forecastResponse = await fetch(
