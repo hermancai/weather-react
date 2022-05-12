@@ -9,23 +9,23 @@ function SearchInput({ handleSearch }) {
     setInput(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(input);
+  };
+
   return (
-    <div className={styles.inputContainer}>
+    <form onSubmit={handleSubmit} className={styles.inputContainer}>
       <input
         className={styles.searchInputField}
         value={input}
         onChange={handleChange}
-        placeholder="Search"
+        placeholder="Search for a city"
       />
-      <button
-        className={styles.searchButton}
-        onClick={() => {
-          handleSearch(input);
-        }}
-      >
+      <button type="submit" className={styles.searchButton}>
         <SearchIcon className={styles.buttonIcon} />
       </button>
-    </div>
+    </form>
   );
 }
 
