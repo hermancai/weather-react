@@ -71,3 +71,11 @@
 .dailyContainer div:nth-child(9n + 2) {
   background-color: #dce5fc;
 }
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  color: #ff5e5e;
+  margin-top: 1rem;
+  gap: 5px;
+}

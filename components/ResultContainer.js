@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Results.module.css";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 function ResultContainer({ data }) {
   const getTimeString = (seconds) => {
@@ -70,7 +71,11 @@ function ResultContainer({ data }) {
     );
   };
 
-  return data === null ? null : (
+  return data === null ? null : data.error ? (
+    <p className={styles.errorMessage}>
+      <ExclamationCircleIcon height={24} /> {data.error}
+    </p>
+  ) : (
     <>
       <div className={styles.currentContainer}>
         <div className={styles.currentLeft}>

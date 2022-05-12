@@ -18,8 +18,6 @@ export default function Home() {
     const result = await fetch(`/api/getWeather/${input}`);
     const resultJSON = await result.json();
 
-    // TODO: error check
-
     setData(resultJSON);
     setLoading(false);
   };
