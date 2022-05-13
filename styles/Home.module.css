@@ -25,10 +25,6 @@
   padding: 0 2rem;
 }
 
-.searchInputField::placeholder {
-  color: #162340;
-}
-
 .searchInputField:focus {
   outline: solid 1px #162340;
 }

@@ -18,3 +18,9 @@ p {
 * {
   box-sizing: border-box;
 }
+
+::placeholder {
+  font-style: italic;
+  color: #162340;
+  opacity: 50%;
+}

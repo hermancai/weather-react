@@ -22,7 +22,12 @@ function SearchInput({ handleSearch }) {
         onChange={handleChange}
         placeholder="Search for a city"
       />
-      <button type="submit" className={styles.searchButton}>
+
+      <button
+        type="submit"
+        className={styles.searchButton}
+        aria-label="Search City for Weather"
+      >
         <SearchIcon className={styles.buttonIcon} />
       </button>
     </form>
