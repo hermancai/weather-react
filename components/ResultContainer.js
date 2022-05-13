@@ -32,9 +32,9 @@ function ResultContainer({ data }) {
     const curr = new Date((day.dt + data.timezone_offset) * 1000);
     return (
       <div key={day.dt} className={styles.gridTop}>
-        <p>{`${
-          days[curr.getUTCDay()]
-        } ${curr.getUTCMonth()}/${curr.getUTCDate()}`}</p>
+        <p>{`${days[curr.getUTCDay()]} ${
+          curr.getUTCMonth() + 1
+        }/${curr.getUTCDate()}`}</p>
         <Image
           src={`/icons/${day.weather[0].icon}.png`}
           alt="weather icon"
