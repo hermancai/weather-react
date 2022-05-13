@@ -123,8 +123,8 @@ function ResultContainer({ data }) {
         {data.daily.map(buildDailyMoon)}
       </div>
       <p className={styles.grayFont}>
-        *Moon phase: 0 and 1 are 'new moon', 0.25 is 'first quarter moon', 0.5
-        is 'full moon' and 0.75 is 'last quarter moon'.
+        {`*Moon phase: 0 and 1 are 'new moon', 0.25 is 'first quarter moon', 0.5
+        is 'full moon' and 0.75 is 'last quarter moon'.`}
       </p>
     </>
   );
