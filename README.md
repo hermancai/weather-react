@@ -1,6 +1,6 @@
 # weather
 
-It's a weather app! Hosted [here](https://weather-react-tawny.vercel.app/).
+It's a weather app!
 
 Built with Next.js.
 
